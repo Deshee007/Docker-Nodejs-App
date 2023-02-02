@@ -1,18 +1,18 @@
 version: '3'
 services:
-  node_app:
-    container_name: nodeApp
+  app:
+    container_name: app
     build: .
     ports:
       - 4000:4000
     depends_on:
-      - mongo
+      - mongodb
     environment:
-      WAIT_HOSTS: mongo:27017
+      WAIT_HOSTS: mongodb:27017
 
-  mongo:
-    container_name: mongo
-    image: mongo
+  mongodb:
+    container_name: mongodb
+    image: mongo:6.0
     ports:
       - 27017:27017
     volumes:
