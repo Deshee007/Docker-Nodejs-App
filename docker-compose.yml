@@ -6,8 +6,8 @@ services:
     volumes:
       - ./data/db /data/db
     environment:
-      MONGO_INITDB_ROOT_USERNAME=admin
-      MONGO_INITDB_ROOT_PASSWORD=admin123
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin123
     networks:
       - deshee007
 
@@ -20,8 +20,8 @@ services:
     depends_on:
       - mongodb
     environment:
-      MONGO_DB_HOSTNAME=mongodb
-      MONGO_DB_USERNAME=admin
-      MONGO_DB_PASSWORD=admin123
+      - MONGO_DB_HOSTNAME=mongodb
+      - MONGO_DB_USERNAME=admin
+      - MONGO_DB_PASSWORD=admin123
     networks:
       - deshee007
